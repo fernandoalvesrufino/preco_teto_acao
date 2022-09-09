@@ -15,7 +15,7 @@ print(f'\n{dados_dividendos}')
 print(historico)                                                 # Imprimindo o histórico da ação
 
 # Calculando a média de pagamentos de dividendos nos ultimos 5 anos
-soma_dividendos = dados.Dividends.sum()
+soma_dividendos = dados_dividendos.Dividends.sum()
 print(f'\nNos últimos 5 anos, o total de dividendos pago por cada ação de {acao} foi de R$ {soma_dividendos:.2f}')
 
 pagamento_medio = soma_dividendos / 5

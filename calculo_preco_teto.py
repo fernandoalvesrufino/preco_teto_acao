@@ -7,7 +7,6 @@ acao = input('Qual ação você deseja analisar? ').upper()
 acao = acao + '.SA'
 codigo = yf.Ticker(acao)
 historico = codigo.history(period = '5y')
-# print(historico)
 
 # Extraindo o histórico de dividendos da ação
 dividendos = codigo.dividends
@@ -27,5 +26,4 @@ def preco_teto(pagamento_medio, dividendo_esperado):
 
 dividendo_desejado = float(input('\nQual a porcentagem esperada de pagamento do dividendo? (Usual = 6%) ')) / 100
 
-# print(f'\nO preço atual da ação é de R$' {codigo.splits})
 preco_teto(pagamento_medio, dividendo_desejado)

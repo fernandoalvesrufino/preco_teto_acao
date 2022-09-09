@@ -12,11 +12,7 @@ historico = codigo.history(period = '5y')
 dividendos = codigo.dividends
 dados_dividendos = pd.DataFrame(dividendos).reset_index()
 print(f'\n{dados_dividendos}')
-
-# Extraindo o histórico de abertura e fechamento da ação
-historico = codigo.history(period='max')
-dados_abertura_fechamento = pd.DataFrame(historico).reset_index()
-print(f'\n{dados_abertura_fechamento}')
+print(historico)                                                 # Imprimindo o histórico da ação
 
 # Calculando a média de pagamentos de dividendos nos ultimos 5 anos
 soma_dividendos = dados.Dividends.sum()

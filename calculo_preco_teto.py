@@ -3,15 +3,20 @@ import yfinance as yf
 
 
 # Extraindo os dados da ação do yahoo finance
-acao = input('Qual ação você deseja analisar? ').upper()
+acao = input('Qual ação você deseja analisar? ').upper() + '.SA'
 acao = acao + '.SA'
 codigo = yf.Ticker(acao)
 historico = codigo.history(period = '5y')
 
 # Extraindo o histórico de dividendos da ação
 dividendos = codigo.dividends
-dados = pd.DataFrame(dividendos).reset_index()
-print(f'\n{dados}')
+dados_dividendos = pd.DataFrame(dividendos).reset_index()
+print(f'\n{dados_dividendos}')
+
+# Extraindo o histórico de abertura e fechamento da ação
+historico = codigo.history(period='max')
+dados_abertura_fechamento = pd.DataFrame(historico).reset_index()
+print(f'\n{dados_abertura_fechamento}')
 
 # Calculando a média de pagamentos de dividendos nos ultimos 5 anos
 soma_dividendos = dados.Dividends.sum()

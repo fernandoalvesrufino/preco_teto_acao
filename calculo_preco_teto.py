@@ -4,7 +4,6 @@ import yfinance as yf
 
 # Extraindo os dados da ação do yahoo finance
 acao = input('Qual ação você deseja analisar? ').upper() + '.SA'
-acao = acao + '.SA'
 codigo = yf.Ticker(acao)
 historico = codigo.history(period = '5y')
 
